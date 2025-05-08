@@ -1,62 +1,62 @@
-Aplikasi Web Deteksi Objek Kendaraan Sederhana
-Deskripsi Proyek
-Proyek ini adalah implementasi sederhana dari aplikasi web untuk mendeteksi objek kendaraan dalam gambar menggunakan model Deep Learning pre-trained dari TensorFlow Hub dan framework web Flask di Python. Pengguna dapat mengunggah gambar melalui antarmuka web, dan aplikasi akan menampilkan gambar hasil deteksi dengan bounding box serta daftar objek yang terdeteksi.
+Simple Vehicle Object Detection Web Application
+Project Description
+This project is a simple implementation of a web application to detect vehicle objects in images using a pre-trained Deep Learning model from TensorFlow Hub and the Flask web framework in Python. Users can upload images through the web interface, and the application will display the detected images with bounding boxes and a list of detected objects.
 
-Fitur Utama
-- Mengunggah gambar melalui antarmuka web.
-- Menjalankan inferensi deteksi objek menggunakan model Deep Learning pre-trained.
-- Menampilkan gambar hasil deteksi dengan bounding box dan label.
-- Menyajikan daftar objek yang terdeteksi beserta skor keyakinan.
+Key Features
+- Upload images through the web interface.
+- Run object detection inference using a pre-trained Deep Learning model.
+- Display the detected images with bounding boxes and labels.
+- Present a list of detected objects along with confidence scores.
 
-Prasyarat
-- Python 3.6+: Anda bisa mengunduhnya dari python.org.
-- pip: Biasanya sudah terinstal bersama Python. Virtual Environment (opsional, tapi sangat direkomendasikan): Seperti venv (bawaan Python) atau conda.
+Prerequisites
+- Python 3.6+: You can download it from python.org.
+- pip: Usually installed with Python. Virtual Environment (optional, but highly recommended): Such as venv (built-in Python) or conda.
 
-Instalasi
-Ikuti langkah-langkah berikut untuk menyiapkan dan menjalankan proyek ini di lingkungan lokal Anda:
+Installation
+Follow these steps to get this project up and running on your local environment:
 
 pip install Flask tensorflow tensorflow-hub opencv-python matplotlib numpy
 
-Struktur File
-Struktur proyek diharapkan seperti ini:
+File Structure
+The project structure is expected to look like this:
 
 .
-├── app.py              # Kode backend Flask
-├── templates/          # Folder untuk template HTML
-│   └── index.html      # Template frontend
-└── static/             # Folder untuk menyimpan gambar hasil (akan dibuat otomatis)
+├── app.py # Flask backend code
+├── templates/ # Folder for HTML templates
+│ └── index.html # Frontend templates
+└── static/ # Folder for storing output images (will be created automatically)
 
-Pastikan file index.html berada di dalam folder templates dan file app.py berada di direktori utama proyek. Folder static akan dibuat secara otomatis saat aplikasi dijalankan.
+Make sure the index.html file is inside the templates folder and the app.py file is in the root directory of the project. The static folder will be created automatically when the application is run.
 
-Penggunaan
-Jalankan Aplikasi Flask:
-Buka terminal atau Command Prompt, navigasikan ke direktori utama proyek Anda (tempat app.py berada), pastikan virtual environment aktif, lalu jalankan perintah:
+Usage
+Run the Flask App:
+Open a terminal or Command Prompt, navigate to your project’s root directory (where app.py is located), make sure the virtual environment is active, and then run the command:
 
 python app.py
 
-Anda akan melihat output di terminal yang menunjukkan bahwa server Flask telah berjalan dan alamat yang bisa diakses (biasanya http://127.0.0.1:5000/).
+You should see output in the terminal indicating that the Flask server is running and an accessible address (usually http://127.0.0.1:5000/).
 
-Akses Aplikasi:
-Buka browser web Anda dan kunjungi alamat yang tertera di output terminal (misalnya, http://127.0.0.1:5000/).
+Access the App:
+Open your web browser and navigate to the address listed in the terminal output (for example, http://127.0.0.1:5000/).
 
-Unggah Gambar:
-Di halaman web yang terbuka, klik tombol untuk memilih file, pilih gambar yang berisi kendaraan dari komputer Anda, lalu klik tombol "Deteksi Objek".
+Upload an Image:
+On the web page that opens, click the button to choose a file, select an image containing a vehicle from your computer, and then click the “Detect Objects” button.
 
-Lihat Hasil:
-Aplikasi akan memproses gambar, menjalankan deteksi, dan menampilkan gambar hasil dengan bounding box serta daftar objek yang terdeteksi di halaman yang sama.
+View Results:
+The app will process the image, run detection, and display the resulting image with bounding boxes and a list of detected objects on the same page.
 
-Model Deep Learning
-Aplikasi ini menggunakan model deteksi objek SSD MobileNet V2 FPNLite dari TensorFlow Hub. Model ini adalah model pre-trained yang dilatih pada dataset besar seperti COCO, yang mencakup berbagai kategori objek termasuk kendaraan. Penggunaan model pre-trained memungkinkan kita untuk langsung melakukan inferensi tanpa perlu melatih model dari awal.
+Deep Learning Model
+The app uses the SSD MobileNet V2 FPNLite object detection model from TensorFlow Hub. This model is a pre-trained model trained on a large dataset like COCO, which covers a wide range of object categories including vehicles. Using a pre-trained model allows us to directly perform inference without having to train the model from scratch.
 
-Dataset (Catatan)
-Meskipun aplikasi ini berfokus pada inferensi menggunakan model pre-trained, dataset teranotasi memainkan peran vital dalam pengembangan model Computer Vision. Contoh dataset yang relevan adalah "Vehicle Detection Image Dataset" yang tersedia di Kaggle (https://www.kaggle.com/datasets/pkdarabi/vehicle-detection-image-dataset). Dataset semacam ini berisi gambar dengan anotasi bounding box dan label yang akurat, yang sangat berguna untuk:
-- Melatih model deteksi objek kustom.
-- Melakukan fine-tuning pada model pre-trained agar lebih spesifik pada jenis data tertentu.
-- Mengevaluasi kinerja model secara kuantitatif.
+Dataset (Note)
+Although this application focuses on inference using a pre-trained model, annotated datasets play a vital role in developing Computer Vision models. An example of a relevant dataset is the “Vehicle Detection Image Dataset” available on Kaggle (https://www.kaggle.com/datasets/pkdarabi/vehicle-detection-image-dataset). Such datasets contain images with accurate bounding box annotations and labels, which are very useful for:
+- Training custom object detection models.
+- Fine-tuning the pre-trained model to be more specific to a particular type of data.
+- Quantitatively evaluating the model performance.
 
-Potensi Pengembangan Lebih Lanjut
-Proyek dasar ini dapat dikembangkan lebih lanjut dengan menambahkan fitur-fitur seperti:
-- Deteksi pada video atau live stream dari webcam.
-- Menambahkan lebih banyak kategori objek untuk dideteksi.
-- Menggunakan model deteksi objek yang berbeda atau melatih model kustom.
-- Meningkatkan antarmuka pengguna (UI) dan pengalaman pengguna (UX).
+Potential for Further Development
+This basic project can be further developed by adding features such as:
+- Detection on videos or live streams from webcams.
+- Adding more object categories to detect.
+- Use different object detection models or train custom models.
+- Improve user interface (UI) and user experience (UX).
