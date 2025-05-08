@@ -28,8 +28,11 @@ The project structure is expected to look like this:
 
 .
 ├── app.py # Flask backend code
+
 ├── templates/ # Folder for HTML templates
+
 │ └── index.html # Frontend templates
+
 └── static/ # Folder for storing output images (will be created automatically)
 
 Make sure the index.html file is inside the templates folder and the app.py file is in the root directory of the project. The static folder will be created automatically when the application is run.
