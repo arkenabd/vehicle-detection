@@ -27,6 +27,7 @@ File Structure
 The project structure is expected to look like this:
 
 .
+
 ├── app.py # Flask backend code
 
 ├── templates/ # Folder for HTML templates
